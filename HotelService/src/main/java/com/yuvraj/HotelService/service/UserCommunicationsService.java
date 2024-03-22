@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import com.yuvraj.HotelService.model.User;
 
 
-@FeignClient(name="UserService",url="http://localhost:8080/user")
+@FeignClient(name="USERSERVICE")//url="http://localhost:8080/user"
 public interface UserCommunicationsService {
-	@GetMapping("/hotel/{id}")
+	@GetMapping("/user/hotel/{id}")
 	public List<User> findByHotelId(@PathVariable("id") int id);
-	@GetMapping("/{id}")
+	@GetMapping("/user/{id}")
 	public User findById(@PathVariable("id") int id);
 }
